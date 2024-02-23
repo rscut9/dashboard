@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dashboard_app.apps.DashboardAppConfig',
+    'djongo',
 ]
 
 MIDDLEWARE = [
@@ -88,11 +89,16 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'dashboard',
         'CLIENT': {
-            'host': 'localhost',
-            'port': 27017,
+            'host': 'mongodb://admin:admin123@mongodb:27017/?authMechanism=SCRAM-SHA-1&authSource=admin',
+            'username': 'admin',
+            'password': 'admin123',
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1'
         }
     }
 }
+
+
 
 
 
